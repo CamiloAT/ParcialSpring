@@ -5,10 +5,9 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+ @Entity
+@Table(name = "products")
 public class Product {
-    @Entity
-    @Table(name = "products")
-    public class Store {
         @Id
         @GeneratedValue(strategy = GenerationType.SEQUENCE)
         private Long idProduct;
@@ -69,6 +68,5 @@ public class Product {
         public void setPrice(double price) {
             this.price = price;
         }
-    }
 
 }

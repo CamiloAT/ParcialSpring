@@ -1,5 +1,6 @@
 package co.edu.uptc.PetShop.model;
 
+import io.micrometer.common.lang.Nullable;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,6 +34,7 @@ public class Appointment {
     @Column
     private String treatmenti;
 
+    @Nullable
     @OneToOne(mappedBy = "appointment", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Invoice invoice;
 

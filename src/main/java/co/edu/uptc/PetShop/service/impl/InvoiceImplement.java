@@ -1,5 +1,7 @@
 package co.edu.uptc.PetShop.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import co.edu.uptc.PetShop.model.Invoice;
@@ -14,5 +16,10 @@ public class InvoiceImplement implements InvoiceService{
 	@Override
 	public Invoice saveInvoice(Invoice invoice) {
 		return invoiceRepository.save(invoice);
+	}
+
+	@Override
+	public List<Invoice> listInvoices() {
+		return invoiceRepository.findAll();
 	}
 }

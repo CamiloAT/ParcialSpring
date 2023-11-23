@@ -2,6 +2,7 @@ package co.edu.uptc.PetShop.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Product {
@@ -21,12 +22,12 @@ public class Product {
         @Column
         private double price;
 
+        @ManyToMany
         @JoinTable(
                 name = "rel_products_invoices",
-                joinColumns = @JoinColumn(name = "FK_PRODUCT", nullable = false),
-                inverseJoinColumns = @JoinColumn(name="FK_INVOICES", nullable = false)
+                joinColumns = @JoinColumn(name = "product_id"),
+                inverseJoinColumns = @JoinColumn(name = "invoices_id")
         )
-        @ManyToMany(cascade = CascadeType.ALL)
         private List<Invoice> invoices;
 
         public void AddInvoice(Invoice invoice){

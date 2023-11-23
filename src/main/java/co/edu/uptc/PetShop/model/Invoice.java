@@ -3,6 +3,7 @@ package co.edu.uptc.PetShop.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,9 +29,10 @@ public class Invoice {
 	@Column
 	private String category;
 
+	@Nullable
 	@ManyToMany(mappedBy = "invoices")
 	private ArrayList<Product> products = new ArrayList<>();
-	
+
 	@OneToOne
 	@JoinColumn(name = "appointment_id")
 	private Appointment appointment;

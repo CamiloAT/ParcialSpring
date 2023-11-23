@@ -1,5 +1,6 @@
 package co.edu.uptc.PetShop.model;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class Product {
         @Column
         private double price;
 
+        @Nullable
         @ManyToMany
         @JoinTable(
                 name = "rel_products_invoices",

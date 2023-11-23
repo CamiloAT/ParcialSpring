@@ -14,15 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Validated
 public class ProductController {
+        @Autowired
+        private ProductService productService;
 
-        private ProductService productService = new ProductService() {
-			
-			@Override
-			public Product save(Product product) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-		};
         @PostMapping("save")
         public ResponseEntity<Product> saveProduct(@RequestBody Product product) {
             Product newProduct = this.productService.save(product);

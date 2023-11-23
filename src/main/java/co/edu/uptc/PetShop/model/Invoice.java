@@ -33,6 +33,7 @@ public class Invoice {
 	@ManyToMany(mappedBy = "invoices")
 	private ArrayList<Product> products = new ArrayList<>();
 
+	@Nullable
 	@OneToOne
 	@JoinColumn(name = "appointment_id")
 	private Appointment appointment;

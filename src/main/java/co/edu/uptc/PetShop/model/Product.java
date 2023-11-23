@@ -17,7 +17,7 @@ public class Product {
         private String name;
 
         @Column
-        private TypeProduct typeProduct;
+        private String typeProduct;
 
         @Column
         private double price;
@@ -28,7 +28,7 @@ public class Product {
                 joinColumns = @JoinColumn(name = "product_id"),
                 inverseJoinColumns = @JoinColumn(name = "invoices_id")
         )
-        private ArrayList<Invoice> invoices;
+        private List<Invoice> invoices;
 
         public void AddInvoice(Invoice invoice){
             if(this.invoices == null){
@@ -54,11 +54,11 @@ public class Product {
             this.name = name;
         }
 
-        public TypeProduct getTypeProduct() {
+        public String getTypeProduct() {
             return typeProduct;
         }
 
-        public void setTypeProduct(TypeProduct typeProduct) {
+        public void setTypeProduct(String typeProduct) {
             this.typeProduct = typeProduct;
         }
 
@@ -69,5 +69,19 @@ public class Product {
         public void setPrice(double price) {
             this.price = price;
         }
+
+        public List<Invoice> getInvoices() {
+            return invoices;
+        }
+
+        public void setInvoices(List<Invoice> invoices) {
+            this.invoices = invoices;
+        }
+
+        
+
+       
+
+        
 
 }

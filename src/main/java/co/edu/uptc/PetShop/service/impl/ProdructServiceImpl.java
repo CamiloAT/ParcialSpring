@@ -5,7 +5,9 @@ import co.edu.uptc.PetShop.model.Product;
 import co.edu.uptc.PetShop.repository.ProductRepository;
 import co.edu.uptc.PetShop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ProdructServiceImpl implements ProductService {
     @Autowired
     private ProductRepository productRepository;

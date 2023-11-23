@@ -22,6 +22,6 @@ public class AppointmentController {
     @PostMapping("save")
     public ResponseEntity<Appointment> savePet(@RequestBody Appointment appointment) {
 		Appointment newAppointment = this.appointmentService.saveAppointment(appointment);
-		return ResponseEntity.ok(appointment);
+		return ResponseEntity.ok(newAppointment);
 	}
 }

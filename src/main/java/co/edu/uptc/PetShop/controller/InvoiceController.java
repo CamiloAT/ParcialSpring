@@ -18,7 +18,7 @@ import co.edu.uptc.PetShop.service.InvoiceService;
 @Validated
 public class InvoiceController {
 	
-	@Autowired
+	@Autowired(required=true)
 	private InvoiceService invoiceService;
 	
 	@PostMapping("save")

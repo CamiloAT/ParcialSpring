@@ -1,8 +1,11 @@
 package co.edu.uptc.PetShop.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,5 +25,10 @@ public class InvoiceController {
     public ResponseEntity<Invoice> saveInvoice(@RequestBody Invoice invoice) {
 		Invoice newInvoice = this.invoiceService.saveInvoice(invoice);
 		return ResponseEntity.ok(newInvoice);
+	}
+	
+	@GetMapping("/list")
+    public List<Invoice> listInvoice() {
+		return invoiceService.listInvoices();
 	}
 }

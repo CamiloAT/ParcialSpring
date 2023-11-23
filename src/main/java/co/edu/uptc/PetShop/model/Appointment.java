@@ -33,7 +33,7 @@ public class Appointment {
     @Column
     private String treatmenti;
 
-    @OneToOne(mappedBy = "apointment", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "appointment", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Invoice invoice;
 
 

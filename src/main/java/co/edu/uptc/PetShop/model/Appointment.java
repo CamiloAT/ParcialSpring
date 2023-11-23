@@ -34,10 +34,65 @@ public class Appointment {
     @Column
     private String treatmenti;
 
-    @Nullable
-    @OneToOne(mappedBy = "appointment", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "appointment", cascade = CascadeType.ALL)
     private Invoice invoice;
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNameVet() {
+        return nameVet;
+    }
+
+    public void setNameVet(String nameVet) {
+        this.nameVet = nameVet;
+    }
+
+    public String getNamePet() {
+        return namePet;
+    }
+
+    public void setNamePet(String namePet) {
+        this.namePet = namePet;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getDiagnosis() {
+        return diagnosis;
+    }
+
+    public void setDiagnosis(String diagnosis) {
+        this.diagnosis = diagnosis;
+    }
+
+    public String getTreatmenti() {
+        return treatmenti;
+    }
+
+    public void setTreatmenti(String treatmenti) {
+        this.treatmenti = treatmenti;
+    }
+
+    public Invoice getInvoice() {
+        return invoice;
+    }
+
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
+    }
+
+    
 
 }

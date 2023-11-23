@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.edu.uptc.PetShop.model.Appointment;
 import co.edu.uptc.PetShop.service.AppointmentService;
+import co.edu.uptc.PetShop.service.PetService;
 
 @RequestMapping("/appointment")
 @RestController

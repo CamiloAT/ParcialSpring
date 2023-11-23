@@ -29,11 +29,11 @@ public class Invoice {
 	@Column
 	private String category;
 
-	@Nullable
+	
 	@ManyToMany(mappedBy = "invoices")
-	private ArrayList<Product> products = new ArrayList<>();
+	private ArrayList<Product> products;
 
-	@Nullable
+	
 	@OneToOne
 	@JoinColumn(name = "appointment_id")
 	private Appointment appointment;

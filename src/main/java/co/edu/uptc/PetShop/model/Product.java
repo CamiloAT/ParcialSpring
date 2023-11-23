@@ -22,14 +22,13 @@ public class Product {
         @Column
         private double price;
 
-        @Nullable
         @ManyToMany
         @JoinTable(
                 name = "rel_products_invoices",
                 joinColumns = @JoinColumn(name = "product_id"),
                 inverseJoinColumns = @JoinColumn(name = "invoices_id")
         )
-        private List<Invoice> invoices;
+        private ArrayList<Invoice> invoices;
 
         public void AddInvoice(Invoice invoice){
             if(this.invoices == null){
